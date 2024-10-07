@@ -36,7 +36,7 @@ class _WordApi implements WordApi {
     )
         .compose(
           _dio.options,
-          '/word/text/ߊ',
+          '/word',
           queryParameters: queryParameters,
           data: _data,
         )

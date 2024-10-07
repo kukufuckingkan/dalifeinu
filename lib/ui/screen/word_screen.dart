@@ -24,9 +24,7 @@ class WordScreen extends ConsumerWidget {
             var words = state.words;
             var fetching = state.fetching;
             var data = state.data;
-            // if(! data){
-            //     return Text('no data fetched');
-            // }
+
              if (fetching) {
               return circularProgress();
             }
@@ -35,9 +33,9 @@ class WordScreen extends ConsumerWidget {
               itemCount: words.length, // Number of posts
               itemBuilder: (context, index) {
                 var word =  words[index];
-                Text("helllo");
+                
                 //return Text(word.sku?? '');
-                //return WordWidget(word: word);
+                return WordWidget(word: word);
               },
             );
             }

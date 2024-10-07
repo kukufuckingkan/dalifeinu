@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$WordState {
-  List<dynamic> get words => throw _privateConstructorUsedError;
+  List<WordResponse> get words => throw _privateConstructorUsedError;
   bool get fetching => throw _privateConstructorUsedError;
   bool get data => throw _privateConstructorUsedError;
 
@@ -32,7 +32,7 @@ abstract class $WordStateCopyWith<$Res> {
   factory $WordStateCopyWith(WordState value, $Res Function(WordState) then) =
       _$WordStateCopyWithImpl<$Res, WordState>;
   @useResult
-  $Res call({List<dynamic> words, bool fetching, bool data});
+  $Res call({List<WordResponse> words, bool fetching, bool data});
 }
 
 /// @nodoc
@@ -58,7 +58,7 @@ class _$WordStateCopyWithImpl<$Res, $Val extends WordState>
       words: null == words
           ? _value.words
           : words // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as List<WordResponse>,
       fetching: null == fetching
           ? _value.fetching
           : fetching // ignore: cast_nullable_to_non_nullable
@@ -79,7 +79,7 @@ abstract class _$$WordStateImplCopyWith<$Res>
       __$$WordStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<dynamic> words, bool fetching, bool data});
+  $Res call({List<WordResponse> words, bool fetching, bool data});
 }
 
 /// @nodoc
@@ -103,7 +103,7 @@ class __$$WordStateImplCopyWithImpl<$Res>
       words: null == words
           ? _value._words
           : words // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as List<WordResponse>,
       fetching: null == fetching
           ? _value.fetching
           : fetching // ignore: cast_nullable_to_non_nullable
@@ -120,14 +120,14 @@ class __$$WordStateImplCopyWithImpl<$Res>
 
 class _$WordStateImpl implements _WordState {
   _$WordStateImpl(
-      {required final List<dynamic> words,
+      {required final List<WordResponse> words,
       required this.fetching,
       required this.data})
       : _words = words;
 
-  final List<dynamic> _words;
+  final List<WordResponse> _words;
   @override
-  List<dynamic> get words {
+  List<WordResponse> get words {
     if (_words is EqualUnmodifiableListView) return _words;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_words);
@@ -169,12 +169,12 @@ class _$WordStateImpl implements _WordState {
 
 abstract class _WordState implements WordState {
   factory _WordState(
-      {required final List<dynamic> words,
+      {required final List<WordResponse> words,
       required final bool fetching,
       required final bool data}) = _$WordStateImpl;
 
   @override
-  List<dynamic> get words;
+  List<WordResponse> get words;
   @override
   bool get fetching;
   @override

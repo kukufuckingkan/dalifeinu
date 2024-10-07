@@ -12,7 +12,7 @@ part 'word_api.g.dart';
 
 class EndPoint {
       static const fetchbyText = "/word/text/ߊ";
-      static const fetchAll = "/word/text/ߊ";
+      static const fetchAll = "/word";
 }
 
 @RestApi(baseUrl: 'http://192.168.0.95:8050')
@@ -23,7 +23,7 @@ abstract class WordApi {
 
 
   @GET(EndPoint.fetchAll)
-  Future<dynamic> fetchAll();
+  Future<List<WordResponse>> fetchAll();
 }
 
 

@@ -7,8 +7,8 @@ part of 'word_response.dart';
 // **************************************************************************
 
 WordResponse _$WordResponseFromJson(Map<String, dynamic> json) => WordResponse(
-      sku: json['sku'] as String?,
-      ordinal: (json['ordinal'] as num?)?.toDouble(),
+      sku: json['sku'] as String,
+      ordinal: (json['ordinal'] as num).toInt(),
       createDate: json['createDate'] == null
           ? null
           : DateTime.parse(json['createDate'] as String),
@@ -17,7 +17,7 @@ WordResponse _$WordResponseFromJson(Map<String, dynamic> json) => WordResponse(
           : DateTime.parse(json['updateDate'] as String),
       version: (json['version'] as num?)?.toInt(),
       definition: json['definition'] as String?,
-      text: json['text'] as String?,
+      text: json['text'] as String,
       language: json['language'] == null
           ? null
           : LanguageResponse.fromJson(json['language'] as Map<String, dynamic>),

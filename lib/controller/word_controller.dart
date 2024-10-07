@@ -18,8 +18,7 @@ class WordController extends StateNotifier<WordState> {
       state = state.copyWith(fetching: true);
       var response = await ref.read(wordService).fetchAll();
       state = state.copyWith(fetching: false, data: true, words: response);
-      return Right("");
-      //return  Right(none());
+      return Right("ok");
     } on Exception catch (e) {
       state = state.copyWith(fetching: false,data: false);
       log(e.toString());

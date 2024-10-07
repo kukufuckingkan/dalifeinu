@@ -7,7 +7,7 @@ part 'word_state.freezed.dart';
 @freezed
 abstract class WordState with _$WordState{
     factory WordState({
-   required List<dynamic> words,
+   required List<WordResponse> words,
     required bool fetching,
     required bool data,
   }) = _WordState;

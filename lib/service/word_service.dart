@@ -14,7 +14,6 @@ class WordService {
   Future<List<WordResponse>> fetchAll() async {
     try {
       var response = await ref.read(wordApi).fetchAll();
-      log(response);
       return response;
     } on DioException catch (e) {
       throw Exception(e);

@@ -6,25 +6,25 @@ part 'word_response.g.dart';
 
 @JsonSerializable()
 class WordResponse {
-  final String? sku;
-  final double? ordinal;
+  final String sku;
+  final int ordinal;
   final DateTime? createDate;
   final DateTime? updateDate;
   final int? version;
   final String? definition;
-  final String? text;
+  final String text;
   final LanguageResponse? language;
   final SoundResponse? sound;
   final String? image;
 
   WordResponse({
-    this.sku,
-    this.ordinal,
+   required this.sku,
+   required this.ordinal,
     this.createDate,
     this.updateDate,
     this.version,
     this.definition,
-    this.text,
+   required this.text,
     this.language,
     this.sound,
     this.image,
