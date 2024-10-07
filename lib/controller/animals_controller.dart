@@ -1,5 +1,5 @@
 
-import 'package:dalifeinnou_ui/animals_service.dart';
+import 'package:dalifeinnou_ui/service/animals_service.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -20,7 +20,7 @@ class AnimalController extends StateNotifier<AnimalState> {
     try {
       state = state.copyWith(fetching: true);
       var response = await ref.read(animalsService).fetchAll();
-      var result = response['payload'];
+      var result = response['data'];
       state = state.copyWith(fetching: false,animals: result);
       return  Right(result);
     } on Exception catch (e) {

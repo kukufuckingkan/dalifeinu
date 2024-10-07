@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:ionicons/ionicons.dart';
 
 import 'app_bar.dart';
-import 'user_account_drawer.dart';
+import 'widget/user_account_drawer.dart';
 
 
 class HomePage extends ConsumerWidget {
@@ -25,17 +25,14 @@ class HomePage extends ConsumerWidget {
           onTap: (index) {
             switch (index) {
               case 0:
-                GoRouter.of(context).go('/');
+                GoRouter.of(context).go('/word');
                 break;
               case 1:
                 GoRouter.of(context).go('/eventsCreated');
                 break;
               case 2:
                 GoRouter.of(context).go('/community');
-                break;
-
-              case 3:
-                GoRouter.of(context).go('/matches');
+                
                 break;
               default:
                 GoRouter.of(context).go('/');
@@ -44,21 +41,13 @@ class HomePage extends ConsumerWidget {
           items: const [
             BottomNavigationBarItem(
               backgroundColor: Colors.black54,
-              icon: Icon(Icons.all_inclusive_sharp),
-              label: 'Animals',
+              icon: Icon(Icons.speaker),
+              label: 'word',
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Ionicons.earth),
-              label: 'Land',
-            ),
-            BottomNavigationBarItem(
-              backgroundColor: Colors.black54,
-              icon: Icon(Icons.water),
-              label: 'Sea',
-            ),
+           
             BottomNavigationBarItem(
               icon: Icon(Icons.air),
-              label: 'Air',
+              label: 'Animal',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person),

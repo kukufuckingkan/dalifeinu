@@ -1,16 +1,18 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
 
-import '../../main.dart';
+import '../../../main.dart';
 
 
 part 'animal_api.g.dart';
 
 class Apis {
-  static const fetchAll = "/animals";
+  static const fetchAll = "/word";
   static const picture = "/animals/{sku}/picture";
   static const authenticate = "/authn";
+  static const fetchbyText = "/word/text/{}";
 }
 
 @RestApi(baseUrl: 'http://192.168.0.95:8050')

@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:dalifeinnou_ui/animal_api.dart';
+import 'package:dalifeinnou_ui/repository/animal_api.dart';
 import 'package:dalifeinnou_ui/main.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

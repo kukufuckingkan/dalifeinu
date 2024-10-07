@@ -19,7 +19,9 @@ mixin _$AnimalState {
   dynamic get animals => throw _privateConstructorUsedError;
   bool get fetching => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AnimalState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AnimalStateCopyWith<AnimalState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -43,6 +45,8 @@ class _$AnimalStateCopyWithImpl<$Res, $Val extends AnimalState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AnimalState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -81,6 +85,8 @@ class __$$AnimalStateImplCopyWithImpl<$Res>
       _$AnimalStateImpl _value, $Res Function(_$AnimalStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AnimalState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -129,7 +135,9 @@ class _$AnimalStateImpl implements _AnimalState {
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(animals), fetching);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AnimalState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AnimalStateImplCopyWith<_$AnimalStateImpl> get copyWith =>
@@ -145,8 +153,11 @@ abstract class _AnimalState implements AnimalState {
   dynamic get animals;
   @override
   bool get fetching;
+
+  /// Create a copy of AnimalState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AnimalStateImplCopyWith<_$AnimalStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

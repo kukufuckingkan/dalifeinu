@@ -1,17 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'animal_api.dart';
+part of 'word_api.dart';
 
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
 
-// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
+// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element
 
-class _AnimalApi implements AnimalApi {
-  _AnimalApi(
+class _WordApi implements WordApi {
+  _WordApi(
     this._dio, {
     this.baseUrl,
+    this.errorLogger,
   }) {
     baseUrl ??= 'http://192.168.0.95:8050';
   }
@@ -20,46 +21,22 @@ class _AnimalApi implements AnimalApi {
 
   String? baseUrl;
 
-  @override
-  Future<dynamic> fetchAll() async {
-    final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
-    final _result = await _dio.fetch(_setStreamType<dynamic>(Options(
-      method: 'GET',
-      headers: _headers,
-      extra: _extra,
-    )
-        .compose(
-          _dio.options,
-          '/animals',
-          queryParameters: queryParameters,
-          data: _data,
-        )
-        .copyWith(
-            baseUrl: _combineBaseUrls(
-          _dio.options.baseUrl,
-          baseUrl,
-        ))));
-    final value = _result.data;
-    return value;
-  }
+  final ParseErrorLogger? errorLogger;
 
   @override
-  Future<dynamic> findPicture(String sku) async {
+  Future<List<WordResponse>> fetchAll() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result = await _dio.fetch(_setStreamType<dynamic>(Options(
+    final _options = _setStreamType<List<WordResponse>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
         .compose(
           _dio.options,
-          '/animals/${sku}/picture',
+          '/word/text/ߊ',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -67,9 +44,18 @@ class _AnimalApi implements AnimalApi {
             baseUrl: _combineBaseUrls(
           _dio.options.baseUrl,
           baseUrl,
-        ))));
-    final value = _result.data;
-    return value;
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<WordResponse> _value;
+    try {
+      _value = _result.data!
+          .map((dynamic i) => WordResponse.fromJson(i as Map<String, dynamic>))
+          .toList();
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {

@@ -1,10 +1,10 @@
-import 'package:dalifeinnou_ui/animal_widget.dart';
+import 'package:dalifeinnou_ui/model/animal_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'animals_controller.dart';
-import 'indicator.dart';
-import 'name_widget.dart';
+import '../../controller/animals_controller.dart';
+import '../../model/indicator.dart';
+import '../widget/name_widget.dart';
 
 class AnimalScreen extends ConsumerWidget {
   const AnimalScreen({super.key});
@@ -28,8 +28,9 @@ class AnimalScreen extends ConsumerWidget {
             return ListView.builder(
               itemCount: names?.length, // Number of posts
               itemBuilder: (context, index) {
-                var item = names[index];
-                return NameItem(name: item);
+                var item = names['sku'];
+                return Text(names.toString());
+                //return NameItem(name: item);
               },
             );
           }),
