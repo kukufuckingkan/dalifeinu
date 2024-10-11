@@ -1,20 +1,22 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:json_annotation/json_annotation.dart';
 part 'language_response.g.dart';
 
-@JsonSerializable()
+
+@JsonSerializable(includeIfNull: true)
 class LanguageResponse {
-  final String? sku;
-  final double? ordinal;
-  final DateTime? createDate;
-  final DateTime? updateDate;
-  final int? version;
+  final String sku;
+  final DateTime createDate;
+  final DateTime updateDate;
+  final int version;
+  final String text;
 
   LanguageResponse({
-    this.sku,
-    this.ordinal,
-    this.createDate,
-    this.updateDate,
-    this.version,
+    required this.sku,
+    required this.text,
+    required this.createDate,
+    required this.updateDate,
+    required this.version,
   });
 
   factory LanguageResponse.fromJson(Map<String, dynamic> json) => _$LanguageResponseFromJson(json);

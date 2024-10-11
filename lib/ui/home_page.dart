@@ -41,7 +41,7 @@ class HomePage extends ConsumerWidget {
           items: const [
             BottomNavigationBarItem(
               backgroundColor: Colors.black54,
-              icon: Icon(Icons.speaker),
+              icon: Icon(Ionicons.book),
               label: 'word',
             ),
            

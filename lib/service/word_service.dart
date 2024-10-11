@@ -16,8 +16,10 @@ class WordService {
       var response = await ref.read(wordApi).fetchAll();
       return response;
     } on DioException catch (e) {
+          log(e.toString());
       throw Exception(e);
     } on SocketException catch (e) {
+      log(e.toString());
       throw Exception(e);
     }
   }

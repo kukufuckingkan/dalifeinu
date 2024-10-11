@@ -1,33 +1,23 @@
-import 'package:dalifeinnou_ui/response/language_response.dart';
-import 'package:dalifeinnou_ui/response/sound_response.dart';
+import 'package:dalifeinnou_ui/response/translation_response.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'word_response.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(includeIfNull: true)
 class WordResponse {
   final String sku;
-  final int ordinal;
-  final DateTime? createDate;
-  final DateTime? updateDate;
-  final int? version;
-  final String? definition;
-  final String text;
-  final LanguageResponse? language;
-  final SoundResponse? sound;
-  final String? image;
+  final DateTime createDate;
+  final DateTime updateDate;
+  final int version;
+  final List<TranslationResponse> translation;
+
 
   WordResponse({
    required this.sku,
-   required this.ordinal,
-    this.createDate,
-    this.updateDate,
-    this.version,
-    this.definition,
-   required this.text,
-    this.language,
-    this.sound,
-    this.image,
+   required this.createDate,
+   required this.updateDate,
+   required this.version,
+   required this.translation,
   });
 
   factory WordResponse.fromJson(Map<String, dynamic> json) => _$WordResponseFromJson(json);

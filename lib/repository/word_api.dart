@@ -1,7 +1,6 @@
 import 'package:dalifeinnou_ui/response/word_response.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:retrofit/http.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../main.dart';
@@ -28,7 +27,7 @@ abstract class WordApi {
 
 
 final wordApi = Provider<WordApi>((ref) {
-  var url = appProperties['NOUKOUNKE_BASE_URL'];
+  var url = appProperties['WULU_BASE_URL'];
   
   //final dio = ref.watch(localStorageController).dioClient;
   return WordApi(Dio(), baseUrl: url);

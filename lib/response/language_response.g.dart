@@ -8,22 +8,18 @@ part of 'language_response.dart';
 
 LanguageResponse _$LanguageResponseFromJson(Map<String, dynamic> json) =>
     LanguageResponse(
-      sku: json['sku'] as String?,
-      ordinal: (json['ordinal'] as num?)?.toDouble(),
-      createDate: json['createDate'] == null
-          ? null
-          : DateTime.parse(json['createDate'] as String),
-      updateDate: json['updateDate'] == null
-          ? null
-          : DateTime.parse(json['updateDate'] as String),
-      version: (json['version'] as num?)?.toInt(),
+      sku: json['sku'] as String,
+      text: json['text'] as String,
+      createDate: DateTime.parse(json['createDate'] as String),
+      updateDate: DateTime.parse(json['updateDate'] as String),
+      version: (json['version'] as num).toInt(),
     );
 
 Map<String, dynamic> _$LanguageResponseToJson(LanguageResponse instance) =>
     <String, dynamic>{
       'sku': instance.sku,
-      'ordinal': instance.ordinal,
-      'createDate': instance.createDate?.toIso8601String(),
-      'updateDate': instance.updateDate?.toIso8601String(),
+      'createDate': instance.createDate.toIso8601String(),
+      'updateDate': instance.updateDate.toIso8601String(),
       'version': instance.version,
+      'text': instance.text,
     };

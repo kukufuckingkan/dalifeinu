@@ -7,8 +7,8 @@ part 'sound_response.g.dart';
 @JsonSerializable()
 class SoundResponse {
   // @JsonValue(200)
-  final String? sku;
-  final double? ordinal;
+  final String sku;
+  final double ordinal;
   final DateTime? createDate;
   final DateTime? updateDate;
   final int? version;
@@ -19,8 +19,8 @@ class SoundResponse {
   final String? subtype;
 
   SoundResponse({
-    this.sku,
-    this.ordinal,
+   required this.sku,
+   required this.ordinal,
     this.createDate,
     this.updateDate,
     this.version,

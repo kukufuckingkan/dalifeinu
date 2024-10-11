@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dalifeinnou_ui/controller/word_controller.dart';
 import 'package:dalifeinnou_ui/ui/widget/word_widget.dart';
 import 'package:flutter/material.dart';
@@ -29,12 +31,12 @@ class WordScreen extends ConsumerWidget {
               return circularProgress();
             }
             else{
+              var itemCount = words.length;
           return ListView.builder(
-              itemCount: words.length, // Number of posts
+              itemCount: itemCount, // Number of posts
               itemBuilder: (context, index) {
                 var word =  words[index];
-                
-                //return Text(word.sku?? '');
+                log("count of words found is $itemCount");
                 return WordWidget(word: word);
               },
             );

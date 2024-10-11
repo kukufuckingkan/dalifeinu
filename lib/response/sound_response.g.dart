@@ -8,8 +8,8 @@ part of 'sound_response.dart';
 
 SoundResponse _$SoundResponseFromJson(Map<String, dynamic> json) =>
     SoundResponse(
-      sku: json['sku'] as String?,
-      ordinal: (json['ordinal'] as num?)?.toDouble(),
+      sku: json['sku'] as String,
+      ordinal: (json['ordinal'] as num).toDouble(),
       createDate: json['createDate'] == null
           ? null
           : DateTime.parse(json['createDate'] as String),
