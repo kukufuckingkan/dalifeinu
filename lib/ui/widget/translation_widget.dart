@@ -13,8 +13,6 @@ class TranslationWidget extends ConsumerWidget {
   @override
   Widget build(context, ref) {
     var sound = translation.sound;
-    var language = translation.language;
-    var hasSound = sound.isNotEmpty;
 
     return Consumer(builder: (ctx, ref, widget) {
       return Card(
@@ -26,7 +24,7 @@ class TranslationWidget extends ConsumerWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-               // AudioWidget(sku: sound),
+                //AudioWidget(sku: sound),
                // ImageWidget(translation.word),
                 Text(translation.text),
               ],

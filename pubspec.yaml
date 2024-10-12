@@ -78,3 +78,19 @@ flutter:
   uses-material-design: true
   assets:
     - profiles/application_local.yaml
+  fonts:
+    - family: nko
+      fonts:
+        - asset: asset/font/nko/NotoSansNKo-Regular.ttf
+        - asset: assets/fonts/MyCustomFont-Bold.ttf
+          weight: FontWeight.bold
+        - asset: assets/fonts/MyCustomFont-Italic.ttf
+          style: FontStyle.italic  
+
+    - family: arabic
+      fonts:
+        - asset: asset/font/nko/NotoSansNKo-Regular.ttf
+        - asset: assets/fonts/MyCustomFont-Bold.ttf
+          weight: FontWeight.bold
+        - asset: assets/fonts/MyCustomFont-Italic.ttf
+          style: FontStyle.italic                

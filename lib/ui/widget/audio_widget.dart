@@ -19,6 +19,11 @@ class AudioWidget extends ConsumerWidget {
  
   @override
   Widget build(context,ref) {
+      // var result =   Future.microtask(() =>
+      //   {ref.read(audioController.notifier).getSound(sku)});
+    if(sku.isEmpty){
+      return Icon(Icons.play_circle_fill);
+    }  
 
    return FutureBuilder(initialData: SoundResponse.fromJson({}),
     future: ref.read(audioController.notifier).getSound(sku),
