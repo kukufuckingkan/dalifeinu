@@ -1,4 +1,4 @@
-import 'package:dalifeinnou_ui/ui/screen/word_screen.dart';
+import 'package:dalifeinnou_ui/ui/screen/translation_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -26,17 +26,10 @@ final appRouter = Provider<GoRouter>((ref) {
       return state.path;
     },
     routes: <RouteBase>[
-
-      GoRoute(
-        path: routeWord,
-        builder: (BuildContext context, GoRouterState state) {
-          return const HomePage(WordScreen());
-        },
-      ),
       GoRoute(
         path: routeBase,
         builder: (BuildContext context, GoRouterState state) {
-          return const HomePage(WordScreen());
+          return const HomePage(TranslationScreen());
         },
       ),
     

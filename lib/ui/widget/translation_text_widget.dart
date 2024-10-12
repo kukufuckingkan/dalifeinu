@@ -3,10 +3,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class TranslationItemWidget extends ConsumerWidget {
+class TranslationtTranslationWidget extends ConsumerWidget {
   final String sku;
 
-  TranslationItemWidget({super.key, required this.sku});
+  TranslationtTranslationWidget({super.key, required this.sku});
 
  
 

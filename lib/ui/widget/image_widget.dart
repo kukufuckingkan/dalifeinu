@@ -10,7 +10,7 @@ class ImageWidget extends ConsumerWidget {
 
   @override
   Widget build(context, ref) {
-     var url = ref.read(imageController.notifier).getUrl(sku!);
+     var url = ref.read(imageController.notifier).getUrl(sku);
      return Expanded(child: Image.network(url,height: 70, width: 70,));
   }
 }

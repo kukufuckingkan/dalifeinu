@@ -16,10 +16,8 @@ class TranslationWidget extends ConsumerWidget {
   @override
   Widget build(context, ref) {
     var sound = translation.sound;
-    var images = translation.image;
     var language = translation.language;
     var hasSound = sound.isNotEmpty;
-    var hasImage = images.length > 0;
 
     return Consumer(builder: (ctx, ref, widget) {
       return Card(
@@ -35,8 +33,8 @@ class TranslationWidget extends ConsumerWidget {
                   visible: hasSound,
                   child: AudioWidget(sku: sound),
                 ),
+               // ImageWidget(translation.word),
                 Text(translation.text),
-                Text(language.text),
               ],
             )
           ],

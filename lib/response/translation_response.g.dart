@@ -8,6 +8,7 @@ part of 'translation_response.dart';
 
 TranslationResponse _$TranslationResponseFromJson(Map<String, dynamic> json) =>
     TranslationResponse(
+      root: json['root'] as String? ?? '',
       sku: json['sku'] as String,
       createDate: DateTime.parse(json['createDate'] as String),
       updateDate: DateTime.parse(json['updateDate'] as String),
@@ -16,18 +17,19 @@ TranslationResponse _$TranslationResponseFromJson(Map<String, dynamic> json) =>
       language:
           LanguageResponse.fromJson(json['language'] as Map<String, dynamic>),
       sound: json['sound'] as String? ?? '',
-      image: (json['image'] as List<dynamic>).map((e) => e as String).toList(),
+      word: json['word'] as String,
     );
 
 Map<String, dynamic> _$TranslationResponseToJson(
         TranslationResponse instance) =>
     <String, dynamic>{
+      'root': instance.root,
       'sku': instance.sku,
       'createDate': instance.createDate.toIso8601String(),
       'updateDate': instance.updateDate.toIso8601String(),
       'version': instance.version,
       'text': instance.text,
       'language': instance.language,
+      'word': instance.word,
       'sound': instance.sound,
-      'image': instance.image,
     };

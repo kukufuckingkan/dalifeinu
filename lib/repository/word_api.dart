@@ -1,3 +1,4 @@
+import 'package:dalifeinnou_ui/response/translation_response.dart';
 import 'package:dalifeinnou_ui/response/word_response.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -12,6 +13,7 @@ part 'word_api.g.dart';
 class EndPoint {
       static const fetchbyText = "/word/text/ߊ";
       static const fetchAll = "/word";
+       static const fetchAllByLanguage = "/word/{language}";
 }
 
 @RestApi(baseUrl: 'http://192.168.0.95:8050')
@@ -23,6 +25,9 @@ abstract class WordApi {
 
   @GET(EndPoint.fetchAll)
   Future<List<WordResponse>> fetchAll();
+
+  @GET(EndPoint.fetchAllByLanguage)
+  Future<List<TranslationResponse>> fetchAllByLanguage(@Path("language") String language);
 }
 
 

@@ -14,7 +14,7 @@ class ImageController extends StateNotifier<ImageState> {
    
 
  String  getUrl(String sku){
-   var base = appProperties['NOUKOUNKE_BASE_URL'];
+   var base = appProperties['WARA_BASE_URL'];
    var path = "/image/$sku";
   var url = base + path;
   return url;
