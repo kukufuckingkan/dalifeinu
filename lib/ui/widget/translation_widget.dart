@@ -17,19 +17,44 @@ class TranslationWidget extends ConsumerWidget {
     return Consumer(builder: (ctx, ref, widget) {
       return Card(
         margin: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                //AudioWidget(sku: sound),
-               // ImageWidget(translation.word),
-                Text(translation.text),
-              ],
-            )
-          ],
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: Column(
+                      children: [
+                        AudioWidget(sku: sound),
+                      ],
+                    ),
+                  ),
+                 // ImageWidget(translation.word),
+                           Expanded(
+                    flex: 1,
+                    child: Column(
+                      children: [
+                        Text(translation.definitions.toString())
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                     flex: 1,
+                    child: Column(
+                      children: [
+                        Text(translation.text),
+                      ],
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
         ),
       );
     });

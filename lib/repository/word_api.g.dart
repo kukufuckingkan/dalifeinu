@@ -71,7 +71,7 @@ class _WordApi implements WordApi {
     )
         .compose(
           _dio.options,
-          '/word/${language}',
+          '/translation/${language}',
           queryParameters: queryParameters,
           data: _data,
         )

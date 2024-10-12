@@ -13,7 +13,7 @@ part 'word_api.g.dart';
 class EndPoint {
       static const fetchbyText = "/word/text/ߊ";
       static const fetchAll = "/word";
-       static const fetchAllByLanguage = "/word/{language}";
+       static const fetchAllByLanguage = "/translation/{language}";
 }
 
 @RestApi(baseUrl: 'http://192.168.0.95:8050')

@@ -25,10 +25,7 @@ class TranslationScreen extends ConsumerWidget {
             return Text(state.error);
           }
           var translations = state.translations;
-          return ListView.separated(
-            separatorBuilder: (context, index) {
-              return const Divider();
-            },
+          return ListView.builder(
             itemCount: translations.length,
             itemBuilder: (context, index) {
               var translation = translations[index];
