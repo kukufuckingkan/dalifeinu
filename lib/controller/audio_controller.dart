@@ -1,6 +1,8 @@
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:dalifeinnou_ui/controller/audio_state.dart';
+import 'package:dalifeinnou_ui/response/sound_response.dart';
+import 'package:dalifeinnou_ui/service/audio_service.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../main.dart';
@@ -11,11 +13,9 @@ class AudioController extends StateNotifier<AudioState> {
 
    AudioController(this.ref) : super(AudioState.initial());
 
- UrlSource  getUrl(String sku){
-   var base = appProperties['WARA_BASE_URL'];
-   var path = "/sound/sku/$sku";
-  var url = base + path;
-  return UrlSource(url);
+ Future<SoundResponse>  getSound(String sku) async{
+  var response = ref.read(audioService).fetchBySku(sku);
+  return response;
  }
 }
 
