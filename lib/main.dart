@@ -12,8 +12,8 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
 const String activeProfile = String.fromEnvironment('ACTIVE_PROFILE', defaultValue: 'local');
-    // Load AppProfileConfig based on the active profile
- // await AppProfileConfig.load(activeProfile);
+   
+ await AppProfileConfig.load(activeProfile);
 
   runApp(const ProviderScope(child: MainApp()));
 }
