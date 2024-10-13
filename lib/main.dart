@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -11,9 +12,9 @@ Future<void> main() async {
   // pass env as command line args
   WidgetsFlutterBinding.ensureInitialized();
 
-const String activeProfile = String.fromEnvironment('ACTIVE_PROFILE', defaultValue: 'local');
+//const String activeProfile = String.fromEnvironment('ACTIVE_PROFILE', defaultValue: 'local');
    
- await AppProfileConfig.load(activeProfile);
+// await AppProfileConfig.load(activeProfile);
 
   runApp(const ProviderScope(child: MainApp()));
 }
@@ -41,6 +42,7 @@ class MainApp extends ConsumerWidget {
   Map<String, dynamic> appProperties = {};
  class AppProfileConfig {
     static Future<Map<String, dynamic>> load(String activeProfile) async {
+    log("the active profile is : $activeProfile");
     String configFile = 'profiles/application_$activeProfile.yaml';
     String yamlString = await rootBundle.loadString(configFile);
     var yaml = loadYaml(yamlString);
