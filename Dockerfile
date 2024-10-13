@@ -1,5 +1,5 @@
-# Use a base image with Flutter pre-installed
-FROM ghcr.io/cirruslabs/flutter:3.24.3
+# Stage 1: Build the Flutter web app
+FROM ghcr.io/cirruslabs/flutter:3.24.3 AS build
 
 # Set the working directory
 WORKDIR /app
@@ -9,12 +9,20 @@ COPY . /app
 
 # Ensure Flutter dependencies are up-to-date
 RUN flutter pub get
-RUN flutter pub get && flutter pub run build_runner build --delete-conflicting-outputs
+RUN flutter pub run build_runner build --delete-conflicting-outputs
 
-# Build the Flutter app (for web)
-RUN flutter build web
+# Build the Flutter app (for web) with the active profile
+ARG ACTIVE_PROFILE=local  # Default profile if none is provided
+RUN flutter build web --dart-define=ACTIVE_PROFILE=$ACTIVE_PROFILE
 
-# Expose port 8080 for serving the Flutter web app
-EXPOSE 8080
-# Start a simple HTTP server to serve the Flutter web app
-CMD [ "flutter", "pub", "global", "activate", "webdev", "serve", "--hostname=0.0.0.0", "--port=8080", "build/web" ]
+# Stage 2: Set up Nginx to serve the Flutter web app
+FROM nginx:alpine
+
+# Copy the build output to Nginx's default HTML location
+COPY --from=build /app/build/web /usr/share/nginx/html
+
+# Expose port 80 to the outside world
+EXPOSE 80
+
+# Start Nginx server
+CMD ["nginx", "-g", "daemon off;"]

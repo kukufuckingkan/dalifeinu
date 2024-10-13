@@ -12,7 +12,7 @@ Future<void> main() async {
   // pass env as command line args
   WidgetsFlutterBinding.ensureInitialized();
 
-//const String activeProfile = String.fromEnvironment('ACTIVE_PROFILE', defaultValue: 'local');
+const String activeProfile = String.fromEnvironment('ACTIVE_PROFILE', defaultValue: 'local');
    
 await AppProfileConfig.load('dev');
 
