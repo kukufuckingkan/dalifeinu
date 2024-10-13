@@ -80,6 +80,7 @@ flutter:
   uses-material-design: true
   assets:
     - profiles/application_local.yaml
+     - profiles/application_dev.yaml   
   # fonts:
   #   - family: nko
   #     fonts:

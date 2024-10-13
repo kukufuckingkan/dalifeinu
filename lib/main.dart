@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -8,7 +10,8 @@ import 'application_router.dart';
 Future<void> main() async {
   // pass env as command line args
   WidgetsFlutterBinding.ensureInitialized();
-  String activeProfile = 'local';
+
+const String activeProfile = String.fromEnvironment('ACTIVE_PROFILE', defaultValue: 'local');
     // Load AppProfileConfig based on the active profile
   await AppProfileConfig.load(activeProfile);
 
