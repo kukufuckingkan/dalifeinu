@@ -9,6 +9,7 @@ COPY . /app
 
 # Ensure Flutter dependencies are up-to-date
 RUN flutter pub get
+RUN flutter pub get && flutter pub run build_runner build --delete-conflicting-outputs
 
 # Build the Flutter app (for web)
 RUN flutter build web
