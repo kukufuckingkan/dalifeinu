@@ -5,6 +5,8 @@ import 'package:dalifeinnou_ui/ui/widget/audio_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'definition_wiget.dart';
+
 class TranslationWidget extends ConsumerWidget {
   final TranslationResponse translation;
 
@@ -19,40 +21,46 @@ class TranslationWidget extends ConsumerWidget {
         margin: const EdgeInsets.all(8.0),
         child: Padding(
           padding: const EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+          child: Stack(
             children: [
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Expanded(
-                    flex: 1,
-                    child: Column(
+              SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        AudioWidget(sku: sound),
+                        Expanded(
+                          flex: 1,
+                          child: Column(
+                            children: [
+                              AudioWidget(sku: sound),
+                            ],
+                          ),
+                        ),
+                       // ImageWidget(translation.word),
+                                 Expanded(
+                          flex: 1,
+                          child: Column(
+                            children: [
+                             DefinitionWiget(sku: '',definitions: translation.definitions,),
+                            ],
+                          ),
+                        ),
+                        Expanded(
+                           flex: 1,
+                          child: Column(
+                            children: [
+                              Text(translation.text),
+                            ],
+                          ),
+                        ),
                       ],
-                    ),
-                  ),
-                 // ImageWidget(translation.word),
-                           Expanded(
-                    flex: 1,
-                    child: Column(
-                      children: [
-                        Text(translation.definitions.toString())
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                     flex: 1,
-                    child: Column(
-                      children: [
-                        Text(translation.text),
-                      ],
-                    ),
-                  ),
-                ],
-              )
+                    )
+                  ],
+                ),
+              ),
             ],
           ),
         ),
