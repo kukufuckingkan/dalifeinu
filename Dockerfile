@@ -1,5 +1,5 @@
 # Use a base image with Flutter pre-installed
-FROM cirrusci/flutter:3.24.3
+FROM cirruslabs/flutter:3.24.3
 
 # Set the working directory
 WORKDIR /app
