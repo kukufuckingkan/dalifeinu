@@ -14,7 +14,7 @@ Future<void> main() async {
 
 //const String activeProfile = String.fromEnvironment('ACTIVE_PROFILE', defaultValue: 'local');
    
-// await AppProfileConfig.load(activeProfile);
+await AppProfileConfig.load('dev');
 
   runApp(const ProviderScope(child: MainApp()));
 }
